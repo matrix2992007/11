@@ -1559,7 +1559,7 @@ async function renderReferral(){
     var uSnap=await db.collection('users').doc(uid).get();
     if(uSnap.exists) APP.user=uSnap.data();
     var user=APP.user;
-    var refLink='https://t.me/barqshop_bot?startapp=ref_'+uid;
+    var refLink='https://t.me/barqshopbot/barqstore?startapp=ref_'+uid;
     var html=
       '<div style="padding:12px 20px 0">'+
         '<div class="glass-card neon">'+
@@ -4155,7 +4155,7 @@ showMain=function(){ _origShowMain5(); setTimeout(checkPendingApprovedOrders,180
 
 function shareReferralLink(){
   var uid=String(APP.tgUser.id);
-  var refLink='https://t.me/barqshop_bot?startapp=ref_'+uid;
+  var refLink='https://t.me/barqshopbot/barqstore?startapp=ref_'+uid;
   if(tg&&tg.shareUrl){ tg.shareUrl(refLink,'⚡ برق شوب — شحن فوري بأقل الأسعار!'); }
   else { copyText(refLink); }
 }
